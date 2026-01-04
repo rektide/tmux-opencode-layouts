@@ -5,6 +5,7 @@ import { findOpencodeCommand } from './command/find-opencode.ts'
 import { hsplitCommand, hsplit } from './command/hsplit.ts'
 import { vsplitCommand, vsplit } from './command/vsplit.ts'
 import { splice, spliceCommand, type SpliceOptions } from './command/splice.ts'
+import { unsplit, unsplitCommand, type UnsplitOptions } from './command/unsplit.ts'
 
 if (await realpath(process.argv[1]) === new URL(import.meta.url).pathname) {
   const subcommand = process.argv[2]
@@ -59,6 +60,20 @@ if (await realpath(process.argv[1]) === new URL(import.meta.url).pathname) {
     }
     
     await splice({ session, start, insert, delete: delCount, names, disjoint })
+  } else if (subcommand === 'unsplit') {
+    const sessionArgIndex = process.argv.indexOf('-s')
+    const windowArgIndex = process.argv.indexOf('-w')
+    
+    const session = sessionArgIndex !== -1 ? process.argv[sessionArgIndex + 1] : null
+    const windowNum = windowArgIndex !== -1 ? parseInt(process.argv[windowArgIndex + 1]) : undefined
+    
+    if (!session) {
+      console.log('Error: session argument is required')
+      console.log('Usage: node cli.ts unsplit -s <session> [-w <window>]')
+      process.exit(1)
+    }
+    
+    await unsplit({ session, window: windowNum })
   } else {
     console.log('tmux-opencode v1.0.0')
     console.log('\nUsage: node cli.ts <command>')
@@ -67,10 +82,11 @@ if (await realpath(process.argv[1]) === new URL(import.meta.url).pathname) {
     console.log('  hsplit            Create horizontal split with opencode on top and window 1 on bottom')
     console.log('  vsplit            Create vertical split with opencode on left and window 1 on right')
     console.log('  splice            Delete and insert tmux windows at specific index')
+    console.log('  unsplit           Remove a split by moving one pane to new window')
     console.log('\nOptions:')
     console.log('  -h, --help       Display this help message')
     console.log('  -v, --version    Display version')
   }
 }
 
-export { findOpencodeCommand, hsplitCommand, vsplitCommand, spliceCommand }
+export { findOpencodeCommand, hsplitCommand, vsplitCommand, spliceCommand, unsplitCommand }
