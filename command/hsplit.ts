@@ -1,14 +1,11 @@
-import { exec } from 'node:child_process'
-import { promisify } from 'node:util'
+import { $ } from 'zx'
 import { ensureWindow2Exists } from './utils.ts'
-
-const execAsync = promisify(exec)
 
 async function hsplitSession(session: string) {
   await ensureWindow2Exists(session)
   
-  await execAsync(`tmux select-window -t "${session}:0"`)
-  await execAsync(`tmux join-pane -s "${session}:1" -t "${session}:0" -h`)
+  await $`tmux select-window -t ${session}:0`
+  await $`tmux join-pane -s ${session}:1 -t ${session}:0 -h`
   
   console.log(`Created horizontal split in session "${session}"`)
   console.log('Top pane: opencode window')

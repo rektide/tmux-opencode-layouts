@@ -8,24 +8,17 @@ importers:
 
   .:
     dependencies:
-      gunshi:
-        specifier: ^0.27.5
-        version: 0.27.5
+      zx:
+        specifier: ^8.8.5
+        version: 8.8.5
 
 packages:
 
-  args-tokens@0.23.0:
-    resolution: {integrity: sha512-VZETsQmpEGO7A9adjfIOTyZuxKzurUas9kh1Hm0WGhFq8dOyw50P6OjiTwKyURwnmDabw0DbFjI+BUucJfCtnQ==}
-    engines: {node: '>= 20'}
-
-  gunshi@0.27.5:
-    resolution: {integrity: sha512-ExdnmI90hQ/eR1wnUc5rVom+K16F1hSpbYrplpt6rrJhXLprVGK9/E63bk7Rju27hAqc3WvpCa8PeY95R165fw==}
-    engines: {node: '>= 20'}
+  zx@8.8.5:
+    resolution: {integrity: sha512-SNgDF5L0gfN7FwVOdEFguY3orU5AkfFZm9B5YSHog/UDHv+lvmd82ZAsOenOkQixigwH2+yyH198AwNdKhj+RA==}
+    engines: {node: '>= 12.17.0'}
+    hasBin: true
 
 snapshots:
 
-  args-tokens@0.23.0: {}
-
-  gunshi@0.27.5:
-    dependencies:
-      args-tokens: 0.23.0
+  zx@8.8.5: {}

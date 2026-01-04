@@ -20,6 +20,6 @@
 	"homepage": "https://github.com/rektide/tmux-opencode-split#readme",
 	"module": "tmux-opencode-split.js",
 	"dependencies": {
-		"gunshi": "^0.27.5"
+		"zx": "^8.8.5"
 	}
 }
