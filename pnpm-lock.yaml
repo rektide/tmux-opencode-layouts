@@ -1,0 +1,31 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      gunshi:
+        specifier: ^0.27.5
+        version: 0.27.5
+
+packages:
+
+  args-tokens@0.23.0:
+    resolution: {integrity: sha512-VZETsQmpEGO7A9adjfIOTyZuxKzurUas9kh1Hm0WGhFq8dOyw50P6OjiTwKyURwnmDabw0DbFjI+BUucJfCtnQ==}
+    engines: {node: '>= 20'}
+
+  gunshi@0.27.5:
+    resolution: {integrity: sha512-ExdnmI90hQ/eR1wnUc5rVom+K16F1hSpbYrplpt6rrJhXLprVGK9/E63bk7Rju27hAqc3WvpCa8PeY95R165fw==}
+    engines: {node: '>= 20'}
+
+snapshots:
+
+  args-tokens@0.23.0: {}
+
+  gunshi@0.27.5:
+    dependencies:
+      args-tokens: 0.23.0

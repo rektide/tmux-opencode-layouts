@@ -1,0 +1,25 @@
+{
+	"name": "tmux-opencode-split",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rektide/tmux-opencode-split.git"
+	},
+	"keywords": [],
+	"author": "rektide de la faye",
+	"license": "MIT",
+	"type": "module",
+	"bugs": {
+		"url": "https://github.com/rektide/tmux-opencode-split/issues"
+	},
+	"homepage": "https://github.com/rektide/tmux-opencode-split#readme",
+	"module": "tmux-opencode-split.js",
+	"dependencies": {
+		"gunshi": "^0.27.5"
+	}
+}
